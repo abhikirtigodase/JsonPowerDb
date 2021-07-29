@@ -41,8 +41,7 @@ onclick="saveEmployee();">
 </form>
 </div>
     <script>
-$("#empId").focus();
-function validateAndGetFormData() {
+        $("#empId").focus();function validateAndGetFormData() {
 var empIdVar = $("#empId").val();
 if (empIdVar === "") {
 alert("Employee ID Required Value");
@@ -97,18 +96,17 @@ jsonObj = JSON.parse(dataJsonObj);
 return jsonObj;
 }
 function resetForm() {
-$("#empId").val("")
+$("#empId").val("");
 $("#empName").val("");
 $("#empEmail").val("");
 $("#empId").focus();
 }
-    function saveEmployee() {
-var jsonStr = validateAndGetFormData();
+  function saveEmployee() {var jsonStr = validateAndGetFormData();
 if (jsonStr === "") {
 return;
 }
-var putReqStr = createPUTRequest("90936861|-31948784479254024|90932362",
-jsonStr, "SAMPLE", "EMP-REL");
+var putReqStr = createPUTRequest("90936311|-31948845769213314|90945505",
+jsonStr, "Employee", "index");
 alert(putReqStr);
 jQuery.ajaxSetup({async: false});
 var resultObj = executeCommand(putReqStr,
@@ -116,7 +114,7 @@ var resultObj = executeCommand(putReqStr,
 alert(JSON.stringify(resultObj));
 jQuery.ajaxSetup({async: true});
 resetForm();
-
+}
     </script>
-</body>
+    </body>
 </html>
